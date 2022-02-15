@@ -23,6 +23,13 @@ echo -e "Done!\nLast snapshot ID before upgrade was ${SNAPPER_LAST_ID}"
 echo "Running upgrade.."
 zypper ref && zypper dup
 
+if [ -x "$(command -v flatpak)" ]
+then
+    flatpak update
+else
+    echo "flatpak not installed.. skipping."
+fi
+
 echo "Modifying snapshot description"
 SNAPPER_PRE_ID=$((SNAPPER_LAST_ID + 1))
 SNAPPER_POST_ID=$((SNAPPER_LAST_ID + 2))
