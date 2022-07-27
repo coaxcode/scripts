@@ -3,6 +3,11 @@
 # zupsnap.sh will upgrade openSUSE Tumbleweed and modify description of created
 # snapshots (pre,post) to release version id's.
 
+if [ ! -x "$(command -v jq)" ]
+then
+    echo "Please install jq"
+    exit
+fi
 
 if  [ $EUID -ne 0 ]
 then
