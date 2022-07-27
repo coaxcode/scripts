@@ -30,7 +30,7 @@ zypper ref && zypper dup
 
 if [ -x "$(command -v flatpak)" ]
 then
-    flatpak update
+    flatpak update -y
 else
     echo "flatpak not installed.. skipping."
 fi
