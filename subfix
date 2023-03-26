@@ -1,0 +1,5 @@
+#!/bin/bash
+# Script to convert windows-1250 to utf-8 format.
+for i in *.srt; do
+iconv -f windows-1250 -t utf-8 "$i" > "${i%.srt}.utf8";
+done
