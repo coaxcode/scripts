@@ -3,4 +3,4 @@
 echo "Syncing Informator data to OneDrive-SDKrasnja. "
 echo ""
 
-rclone sync --progress /var/mnt/Data/OneDrive-SDKrasnja/ onedrive-sdkrasnja:Informator
+rclone sync --tpslimit 10 --progress ~/OneDrive-SDKrasnja/ onedrive-sdkrasnja:Informator
